@@ -21,9 +21,13 @@ function twitch() {
 
   client.connect();
 
-  async function onMessageHandler(_, { username }, msg) {
+  async function onMessageHandler(_, ctx, msg) {
+    const { "display-name": displayName } = ctx;
+
+    console.log(ctx, displayName);
+
     await db("messages").insert({
-      username: username,
+      username: displayName,
       msg: msg.trim(),
     });
   }

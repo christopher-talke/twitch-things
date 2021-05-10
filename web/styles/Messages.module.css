@@ -1,0 +1,30 @@
+.chatContainer {
+  margin-top: 1em;
+  box-sizing: border-box;
+  padding: 1em;
+  max-height: 1005px;
+  overflow: hidden;
+}
+
+.chatBubble {
+  background: rgb(31, 31, 31);
+  color: white;
+  box-sizing: border-box;
+  padding: 0.5em;
+  border-radius: 8px;
+  margin-bottom: 0.75em;
+  font-size: 1.2em;
+}
+
+.chatBubble:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+  margin-bottom: 1em;
+}

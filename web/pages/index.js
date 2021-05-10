@@ -1,6 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
+import OverlayLayout from "../modules/OverlayLayout";
+import Messages from "../modules/Messages";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -10,9 +13,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Ekkys Twitch App</h1>
-      </main>
+      <OverlayLayout>
+        <div className="main">
+          <h1>Main Screen</h1>
+        </div>
+        <Messages />
+        <div className="announcements">
+          <h1>Announcements</h1>
+        </div>
+      </OverlayLayout>
     </div>
   );
 }

@@ -11,6 +11,16 @@ const resolvers = require("./resolvers");
 const app = Fastify();
 twitch();
 
+app.register(require("fastify-cors"), {
+  origin: (origin, cb) => {
+    if (/localhost/.test(origin)) {
+      cb(null, true);
+      return;
+    }
+    cb(new Error("Not allowed"));
+  },
+});
+
 app.register(mercurius, {
   schema,
   resolvers,
